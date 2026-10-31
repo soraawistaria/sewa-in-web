@@ -1,0 +1,62 @@
+﻿<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f6f5f0" />
+  <title>SewaIn — Pakai yang kamu butuhkan</title>
+  <link rel="preconnect" href="https://images.unsplash.com" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="SewaIn beranda"><span class="brand-mark">s.</span><span>SewaIn</span></a>
+    <nav class="main-nav" aria-label="Navigasi utama">
+      <a class="nav-link active" href="#home" data-page="home">Beranda</a>
+      <a class="nav-link" href="#catalog" data-page="catalog">Jelajahi</a>
+      <a class="nav-link" href="#orders" data-page="orders">Pesanan</a>
+      <a class="nav-link" href="#dashboard" data-page="dashboard">Dashboard</a>
+    </nav>
+    <div class="top-actions">
+      <button class="icon-button search-open" aria-label="Cari">⌕</button>
+      <button class="avatar-button" id="loginBtn"><span>👤</span><span class="login-label">Masuk</span></button>
+      <button class="mobile-menu" id="menuBtn" aria-label="Buka menu">☰</button>
+    </div>
+  </header>
+
+  <main id="app">
+    <section class="page active" id="page-home">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">HIDUP LEBIH RINGAN</p>
+          <h1>Yang kamu perlu.<br /><em>Tanpa harus memiliki.</em></h1>
+          <p class="hero-sub">Sewa barang berkualitas untuk setiap momen. Praktis, fleksibel, dan lebih bijak.</p>
+          <div class="hero-actions"><a href="#catalog" class="button button-dark" data-page="catalog">Temukan barang <span>↗</span></a><span class="hero-note">Dipercaya 12.000+ penyewa</span></div>
+        </div>
+        <div class="hero-visual"><img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1400&q=85" alt="Perjalanan alam dengan perlengkapan outdoor" /><div class="hero-caption"><span>01 / 04</span><span>Perlengkapan untuk pergi lebih jauh</span></div><span class="hero-stamp">SEWA<br />DENGAN<br />MAKNA</span></div>
+      </section>
+      <section class="section category-section"><div class="section-heading"><div><p class="eyebrow">PILIH KATEGORI</p><h2>Mulai dari kebutuhanmu</h2></div><a href="#catalog" data-page="catalog" class="text-link">Lihat semua <span>↗</span></a></div><div class="category-grid" id="categories"></div></section>
+      <section class="section popular-section"><div class="section-heading"><div><p class="eyebrow">PILIHAN MINGGU INI</p><h2>Barang yang sedang populer</h2></div><a href="#catalog" data-page="catalog" class="text-link">Jelajahi katalog <span>↗</span></a></div><div class="product-grid" id="popularProducts"></div></section>
+      <section class="manifesto"><p class="eyebrow">LEBIH BANYAK MOMEN, LEBIH SEDIKIT BARANG</p><h2>Bagikan. Gunakan kembali.<br /><em>Jalani lebih banyak.</em></h2><a class="text-link" href="#about">Kenali cara kami bekerja ↗</a></section>
+      <section class="section review-strip"><div><p class="eyebrow">CERITA DARI PENYEWA</p><h2>“Semua jadi terasa mudah.”</h2><p class="muted">Barangnya terawat, prosesnya jelas, dan bisa diantar tepat waktu.</p><div class="stars">★★★★★ <span>4.9 dari 5 · 2.400+ ulasan</span></div></div><div class="review-quote"><p>“SewaIn bikin persiapan liburan keluarga jauh lebih praktis. Nggak perlu beli koper tambahan yang cuma dipakai sesekali.”</p><span>— Nadia P., Jakarta Selatan</span></div></section>
+    </section>
+
+    <section class="page" id="page-catalog">
+      <div class="page-intro"><p class="eyebrow">KATALOG SEWAIN</p><h1>Temukan yang kamu butuhkan.</h1><p class="muted">Barang pilihan, siap menemani rencana berikutnya.</p></div>
+      <div class="catalog-tools"><div class="search-box"><span>⌕</span><input id="searchInput" placeholder="Cari kamera, tenda, proyektor..." /><kbd>ENTER</kbd></div><select id="sortSelect" aria-label="Urutkan"><option value="popular">Paling relevan</option><option value="low">Harga terendah</option><option value="high">Harga tertinggi</option></select></div>
+      <div class="catalog-layout"><aside class="filters"><p class="filter-title">Kategori</p><div id="filterCategories"></div><div class="filter-divider"></div><p class="filter-title">Ketersediaan</p><label class="check-row"><input type="checkbox" id="availableOnly" /> Siap disewa</label><div class="filter-divider"></div><p class="filter-title">Rentang harga / hari</p><div class="price-range"><span>Rp 0</span><span>Rp 500rb+</span></div><input type="range" min="50000" max="500000" step="25000" value="500000" id="priceRange" /></aside><div class="catalog-results"><div class="results-meta"><span id="resultsCount">Menampilkan barang</span><span>📍 Jakarta & sekitarnya</span></div><div class="product-grid" id="catalogProducts"></div></div></div>
+    </section>
+
+    <section class="page" id="page-detail"><div id="detailContent"></div></section>
+    <section class="page" id="page-checkout"><div id="checkoutContent"></div></section>
+    <section class="page" id="page-payment"><div id="paymentContent"></div></section>
+    <section class="page" id="page-orders"><div class="page-intro"><p class="eyebrow">AREA SAYA</p><h1>Pesanan kamu.</h1><p class="muted">Pantau dan kelola semua penyewaanmu.</p></div><div class="order-tabs"><button class="selected">Semua</button><button>Berlangsung</button><button>Selesai</button></div><div id="ordersContent"></div></section>
+    <section class="page" id="page-dashboard"><div id="dashboardContent"></div></section>
+  </main>
+
+  <footer class="footer"><div class="footer-top"><a class="brand" href="#home"><span class="brand-mark">s.</span><span>SewaIn</span></a><p>Lebih banyak menggunakan,<br />lebih sedikit memiliki.</p><div class="footer-links"><a href="#catalog" data-page="catalog">Katalog</a><a href="#orders" data-page="orders">Pesanan</a><a href="#dashboard" data-page="dashboard">Untuk mitra</a><a href="#about">Bantuan</a></div></div><div class="footer-bottom"><span>© 2026 SewaIn Indonesia</span><span>Jakarta · Bandung · Surabaya</span><span>Instagram&nbsp;&nbsp; ↗</span></div></footer>
+  <div class="toast" id="toast"></div>
+  <div class="modal-backdrop" id="modalBackdrop"><div class="modal" id="modalContent"></div></div>
+  <script src="app.js"></script>
+</body>
+</html>
